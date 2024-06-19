@@ -1,8 +1,17 @@
 package com.s4sprint1.server.entities;
 
 public class Airport {
+    private int id;
     private String name;
     private String code;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

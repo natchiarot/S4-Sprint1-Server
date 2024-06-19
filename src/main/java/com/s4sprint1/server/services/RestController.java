@@ -14,23 +14,31 @@ import java.util.List;
 @CrossOrigin
 public class RestController {
     @Autowired
-    private ResourceService resources;
-
-    // Get a list of all cities
-    @GetMapping("cities")
-    public List<City> getAllCities() {
-        return resources.getAllCities();
-    }
+    private CityService cityService;
+    @Autowired
+    private AirportService airportService;
 
     // Add a new city
     @PostMapping("city")
     public City addCity(@RequestBody City newCity) {
-        return resources.addCity(newCity);
+        return cityService.addCity(newCity);
+    }
+
+    // Get a list of all cities
+    @GetMapping("cities")
+    public List<City> getAllCities() {
+        return cityService.getAllCities();
+    }
+
+    // Add a new airport
+    @PostMapping("airport")
+    public Airport addAirport(@RequestBody Airport newAirport) {
+        return airportService.addAirport(newAirport);
     }
 
     // Get a list of all airports
     @GetMapping("airports")
     public List<Airport> getAllAirports() {
-        return resources.getAllAirports();
+        return airportService.getAllAirports();
     }
 }
