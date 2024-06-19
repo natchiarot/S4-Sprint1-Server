@@ -3,6 +3,7 @@ package com.s4sprint1.server.services;
 import org.springframework.stereotype.Service;
 import com.s4sprint1.server.entities.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,4 +31,13 @@ public class ResourceService {
         return cities.get(id);
     }
 
+    public List<Airport> getAllAirports() {
+        List<Airport> airports = new ArrayList<Airport>();
+
+        for (City city : cities.values()) {
+            airports.addAll(city.getAirports());
+        }
+
+        return airports;
+    }
 }

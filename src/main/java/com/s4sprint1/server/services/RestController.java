@@ -16,13 +16,21 @@ public class RestController {
     @Autowired
     private ResourceService resources;
 
+    // Get a list of all cities
     @GetMapping("cities")
     public List<City> getAllCities() {
         return resources.getAllCities();
     }
 
+    // Add a new city
     @PostMapping("city")
     public City addCity(@RequestBody City newCity) {
         return resources.addCity(newCity);
+    }
+
+    // Get a list of all airports
+    @GetMapping("airports")
+    public List<Airport> getAllAirports() {
+        return resources.getAllAirports();
     }
 }
