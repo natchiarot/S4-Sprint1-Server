@@ -4,7 +4,6 @@ public class Airport {
     private int id;
     private String name;
     private String code;
-    private int cityId;
 
     public int getId() {
         return id;
@@ -28,13 +27,5 @@ public class Airport {
 
     public void setCode(String code) {
         this.code = code;
-    }
-
-    public int getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(int cityId) {
-        this.cityId = cityId;
     }
 }

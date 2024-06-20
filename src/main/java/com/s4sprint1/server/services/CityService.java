@@ -1,5 +1,6 @@
 package com.s4sprint1.server.services;
 
+import com.s4sprint1.server.entities.Airport;
 import org.springframework.stereotype.Service;
 import com.s4sprint1.server.entities.City;
 
@@ -16,6 +17,13 @@ public class CityService {
 
         return newCity;
     };
+
+    public List<City> addCities(List<City> newCities) {
+        for (City city : newCities)
+            cities.put(city.getId(), city);
+
+        return newCities;
+    }
 
     public City getCity(int id) {
         return cities.get(id);

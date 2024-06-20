@@ -17,6 +17,13 @@ public class AirportService {
         return newAirport;
     }
 
+    public List<Airport> addAirports(List<Airport> newAirports) {
+        for (Airport airport : newAirports)
+            airports.put(airport.getId(), airport);
+
+        return newAirports;
+    }
+
     public Airport getAirport(int id) {
         return airports.get(id);
     }
