@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3de1577-d1fd-4058-8499-3557a6073694" name="Changes" comment="Airports can be associated with cities, convenience endpoints" />
+    <list default="true" id="c3de1577-d1fd-4058-8499-3557a6073694" name="Changes" comment="Airports can be associated with cities, convenience endpoints">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/entities/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/entities/Flight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/FlightService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/FlightService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="rest-api" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,6 +53,7 @@
     "Application.ServerApplication.executor": "Run",
     "Maven.server [compile].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "flights",
     "kotlin-language-version-configured": "true",
     "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
   }

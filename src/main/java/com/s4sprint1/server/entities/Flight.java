@@ -2,7 +2,6 @@ package com.s4sprint1.server.entities;
 
 public class Flight {
     private int id;
-    private String date;
     private String expDeparture;
     private String expArrival;
     private int fromAirportId;
@@ -15,14 +14,6 @@ public class Flight {
     }
 
     public void setId(int id) { this.id = id; }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
 
     public String getExpDeparture() {
         return expDeparture;
