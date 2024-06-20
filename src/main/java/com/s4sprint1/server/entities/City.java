@@ -1,21 +1,10 @@
 package com.s4sprint1.server.entities;
 
-import java.util.List;
-
 public class City {
     private int id;
     private String name;
     private String state;
     private int population;
-    private List<Airport> airports;
-
-    public List<Airport> getAirports() {
-        return airports;
-    }
-
-    public void setAirports(List<Airport> airports) {
-        this.airports = airports;
-    }
 
     public int getId() {
         return id;

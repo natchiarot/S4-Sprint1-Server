@@ -5,7 +5,7 @@ public class Passenger {
     private String firstName;
     private String lastName;
     private String phoneNumber;
-    private int cityId;
+    private int homeCityId;
 
     public int getId() {
         return id;
@@ -35,11 +35,11 @@ public class Passenger {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getCityId() {
-        return cityId;
+    public int getHomeCityId() {
+        return homeCityId;
     }
 
-    public void setCityId(int cityId) {
-        this.cityId = cityId;
+    public void setHomeCityId(int homeCityId) {
+        this.homeCityId = homeCityId;
     }
 }

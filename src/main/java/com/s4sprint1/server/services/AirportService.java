@@ -1,7 +1,7 @@
 package com.s4sprint1.server.services;
 
 import org.springframework.stereotype.Service;
-import com.s4sprint1.server.entities.*;
+import com.s4sprint1.server.entities.Airport;
 
 import java.util.HashMap;
 import java.util.List;

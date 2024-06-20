@@ -5,9 +5,14 @@ public class Aircraft {
     private String type;
     private String airlineName;
     private short maxCapacity;
+    private int airportId;
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getType() {
@@ -32,5 +37,13 @@ public class Aircraft {
 
     public void setMaxCapacity(short maxCapacity) {
         this.maxCapacity = maxCapacity;
+    }
+
+    public int getAirportId() {
+        return airportId;
+    }
+
+    public void setAirportId(int airportId) {
+        this.airportId = airportId;
     }
 }

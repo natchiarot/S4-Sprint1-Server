@@ -1,13 +1,13 @@
 package com.s4sprint1.server.services;
 
 import org.springframework.stereotype.Service;
-import com.s4sprint1.server.entities.*;
+import com.s4sprint1.server.entities.City;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Service // Service to store and recall cities
+@Service // Service to store and recall Cities
 public class CityService {
     private final Map<Integer, City> cities = new HashMap<Integer, City>();
 

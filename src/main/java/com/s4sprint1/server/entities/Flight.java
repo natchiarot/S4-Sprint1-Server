@@ -5,13 +5,16 @@ public class Flight {
     private String date;
     private String expDeparture;
     private String expArrival;
-    private int airportId;
+    private int fromAirportId;
+    private int toAirportId;
     private int aircraftId;
     private int passengerId;
 
     public int getId() {
         return id;
     }
+
+    public void setId(int id) { this.id = id; }
 
     public String getDate() {
         return date;
@@ -37,12 +40,20 @@ public class Flight {
         this.expArrival = expArrival;
     }
 
-    public int getAirportId() {
-        return airportId;
+    public int getFromAirportId() {
+        return fromAirportId;
     }
 
-    public void setAirportId(int airportId) {
-        this.airportId = airportId;
+    public void setFromAirportId(int fromAirportId) {
+        this.fromAirportId = fromAirportId;
+    }
+
+    public int getToAirportId() {
+        return toAirportId;
+    }
+
+    public void setToAirportId(int toAirportId) {
+        this.toAirportId = toAirportId;
     }
 
     public int getAircraftId() {
