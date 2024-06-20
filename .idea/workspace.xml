@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3de1577-d1fd-4058-8499-3557a6073694" name="Changes" comment="Airports can be associated with cities, convenience endpoints">
+    <list default="true" id="c3de1577-d1fd-4058-8499-3557a6073694" name="Changes" comment="Added methods for FlightService, including searching">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/entities/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/entities/Flight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/FlightService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/FlightService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/AircraftService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/AircraftService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/PassengerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/PassengerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/RestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/RestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/entities/Flight.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/entities/Flight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/AircraftService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/AircraftService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/FlightService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/FlightService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/PassengerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/PassengerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/RestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/RestController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718894322341</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added methods for FlightService, including searching">
+      <option name="closed" value="true" />
+      <created>1718908538547</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718908538547</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -148,6 +162,7 @@
     <MESSAGE value="Airports are no longer aggregated by Cities" />
     <MESSAGE value="Services for all entities" />
     <MESSAGE value="Airports can be associated with cities, convenience endpoints" />
-    <option name="LAST_COMMIT_MESSAGE" value="Airports can be associated with cities, convenience endpoints" />
+    <MESSAGE value="Added methods for FlightService, including searching" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added methods for FlightService, including searching" />
   </component>
 </project>

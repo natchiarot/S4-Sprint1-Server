@@ -17,6 +17,13 @@ public class AircraftService {
         return newAircraft;
     }
 
+    public List<Aircraft> addAircraftList(List<Aircraft> newAircraft) {
+        for (Aircraft aircraft : newAircraft)
+            aircraftMap.put(aircraft.getId(), aircraft);
+
+        return newAircraft;
+    }
+
     public Aircraft getAircraft(int id) {
         return aircraftMap.get(id);
     }

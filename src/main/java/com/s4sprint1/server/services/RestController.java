@@ -14,6 +14,10 @@ public class RestController {
     private CityService cityService;
     @Autowired
     private AirportService airportService;
+    @Autowired
+    private AircraftService aircraftService;
+    @Autowired
+    private FlightService flightService;
 
     // Add a new city
     @PostMapping("city")
@@ -23,7 +27,7 @@ public class RestController {
 
     // Add a list of new cities
     @PostMapping("cities")
-    public List<City> addCities(List<City> cities) {
+    public List<City> addCities(@RequestBody List<City> cities) {
         return cityService.addCities(cities);
     }
 
@@ -52,20 +56,79 @@ public class RestController {
     }
 
     // Associate an airport with a city
-    @PutMapping("city/{cityId}/{airportId}")
-    public City addAirportToCity(@PathVariable int cityId, @PathVariable int airportId) {
-         City targetCity = cityService.getCity(cityId);
-         targetCity.linkAirport(airportService.getAirport(airportId));
+    // For example, to associate airport 1 with city 10: /city/10?airport=1
+    @PutMapping("city/{cityId}")
+    public City moveAirportToCity(@PathVariable int cityId, @RequestParam(value = "airport") int airportId) {
+        Airport targetAirport = airportService.getAirport(airportId);
 
-         return targetCity;
+        // An airport can only exist in one city, ensure this rule is enforced
+        // (Airports shouldn't move in the first place, but...)
+        for (City city : cityService.getAllCities()) {
+            if (city.getId() == cityId)
+                city.linkAirport(targetAirport);
+            else
+                city.unlinkAirport(targetAirport);
+        }
+
+        City targetCity = cityService.getCity(cityId);
+        targetCity.linkAirport(targetAirport);
+
+        return targetCity;
     }
 
     // Remove an airport association
-    @DeleteMapping("city/{cityId}/{airportId}")
-    public City removeAirportFromCity(@PathVariable int cityId, @PathVariable int airportId) {
+    @DeleteMapping("city/{cityId}")
+    public City removeAirportFromCity(@PathVariable int cityId, @RequestParam(value = "airport") int airportId) {
         City targetCity = cityService.getCity(cityId);
         targetCity.unlinkAirport(airportService.getAirport(airportId));
 
         return targetCity;
+    }
+
+    // Add an aircraft
+    @PostMapping("aircraft")
+    public Aircraft addAircraft(Aircraft newAircraft) {
+        aircraftService.addAircraft(newAircraft);
+
+        return newAircraft;
+    }
+
+    // Add a list of aircraft
+    @PostMapping("aircraft")
+    public List<Aircraft> addAircraftList(List<Aircraft> newAircraft) {
+            return aircraftService.addAircraftList(newAircraft);
+    }
+
+    // Get a list of aircraft
+    @GetMapping("aircraft")
+    public List<Aircraft> getAircraft() {
+        return aircraftService.getAllAircraft();
+    }
+
+    // Move aircraft to a given airport
+    @PutMapping("aircraft/{aircraftId}")
+    public Aircraft moveAircraftToAirport(@PathVariable int aircraftId, @RequestParam(value = "airport") int airportId) {
+        Aircraft targetAircraft = aircraftService.getAircraft(aircraftId);
+        targetAircraft.setAirportId(airportId);
+
+        return targetAircraft;
+    }
+
+    // Get the current location (airport) of an aircraft
+    @GetMapping("aircraft/{aircraftId}/location")
+    public Airport getAircraftLocation(@PathVariable int aircraftId) {
+        Aircraft aircraft = aircraftService.getAircraft(aircraftId);
+
+        return airportService.getAirport(aircraft.getAirportId());
+    }
+
+    // Get all possible flight destinations for an aircraft
+    // (ie, all airports except the one it is currently located at)
+    @GetMapping("aircraft/{aircraftId}/destinations")
+    public List<Airport> getAircraftDestinations(@PathVariable int aircraftId) {
+        List<Airport> destinations = airportService.getAllAirports();
+        destinations.remove(airportService.getAirport(aircraftId));
+
+        return destinations;
     }
 }
