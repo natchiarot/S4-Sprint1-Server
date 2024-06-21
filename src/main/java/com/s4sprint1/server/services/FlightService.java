@@ -66,7 +66,7 @@ public class FlightService {
         return results;
     }
 
-    public List<Flight> getFlightsByAirport(int id) {
+    public List<Flight> getFlightsByAircraft(int id) {
         List<Flight> results = new ArrayList<Flight>();
 
         for (Flight flight : flights.values()) {

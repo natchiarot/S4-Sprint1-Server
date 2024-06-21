@@ -18,6 +18,8 @@ public class RestController {
     private AircraftService aircraftService;
     @Autowired
     private FlightService flightService;
+    @Autowired
+    private PassengerService passengerService;
 
     // Add a new city
     @PostMapping("city")
@@ -130,5 +132,81 @@ public class RestController {
         destinations.remove(airportService.getAirport(aircraftId));
 
         return destinations;
+    }
+
+    // Add a passenger
+    @PostMapping("passenger")
+    public Passenger addPassenger(@RequestBody Passenger newPassenger) {
+        passengerService.addPassenger(newPassenger);
+
+        return newPassenger;
+    }
+
+    // Add a list of passengers
+    @PostMapping("passengers")
+    public List<Passenger> addPassengers(@RequestBody List<Passenger> newPassengers) {
+        passengerService.addPassengers(newPassengers);
+
+        return newPassengers;
+    }
+
+    // Get a specific passenger
+    @GetMapping("passenger/{id}")
+    public Passenger getPassenger(@PathVariable int id) {
+        return passengerService.getPassenger(id);
+    }
+
+    // Get all passengers
+    @GetMapping("passengers")
+    public List<Passenger> getPassengers() {
+        return passengerService.getAllPassengers();
+    }
+
+    // Add a flight
+    @PostMapping("flight")
+    public Flight addFlight(@RequestBody Flight newFlight) {
+        return flightService.addFlight(newFlight);
+    }
+
+    // Add a list of flights
+    @PostMapping("flights")
+    public List<Flight> addFlights(@RequestBody List<Flight> newFlights) {
+        return flightService.addFlights(newFlights);
+    }
+
+    // Get a specific flight
+    @GetMapping("flight/{id}")
+    public Flight getFlight(@PathVariable int id) {
+        return flightService.getFlight(id);
+    }
+
+    // Get all flights
+    @GetMapping("flights")
+    public List<Flight> getFlights() {
+        return flightService.getAllFlights();
+    }
+
+    // Get all flights from a given airport
+    @GetMapping("flights")
+    public List<Flight> getFlightsBySource(@RequestParam(value = "source") int source) {
+        return flightService.getFlightsFromAirport(source);
+    }
+
+    // Get all flights to a given airport
+    @GetMapping("flights")
+    public List<Flight> getFlightsByDestination(@RequestParam(value = "destination") int destination) {
+        return flightService.getFlightsToAirport(destination);
+    }
+
+    // Get all flights a given passenger has taken
+    @GetMapping("flights")
+    public List<Flight> getFlightsByPassenger(@RequestParam(value = "passenger") int passenger) {
+        return flightService.getFlightsByPassenger(passenger);
+    }
+
+    // Get all flights by a given aircraft
+    @GetMapping("flights")
+    public List<Flight> getFlightsByAircraft(@RequestParam(value = "aircraft") int aircraft) {
+        return flightService.getFlightsByAircraft(aircraft);
     }
 }
