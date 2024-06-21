@@ -32,4 +32,24 @@ public class CityService {
     public List<City> getAllCities() {
         return List.copyOf(cities.values());
     }
+
+    public City moveAirportToCity(Airport targetAirport, int cityId) {
+        // An airport can only exist in one city, ensure this rule is enforced
+        // (Airports shouldn't move in the first place, but...)
+        for (City city : getAllCities()) {
+            if (city.getId() == cityId)
+                city.linkAirport(targetAirport);
+            else
+                city.unlinkAirport(targetAirport);
+        }
+
+        return getCity(cityId);
+    }
+
+    public City removeAirportFromCity(Airport targetAirport, int cityId) {
+        City targetCity = getCity(cityId);
+        targetCity.unlinkAirport(targetAirport);
+
+        return targetCity;
+    }
 }

@@ -31,4 +31,11 @@ public class AircraftService {
     public List<Aircraft> getAllAircraft() {
         return List.copyOf(aircraftMap.values());
     }
+
+    public Aircraft moveAircraftToAirport(int aircraftId, int airportId) {
+        Aircraft targetAircraft = getAircraft(aircraftId);
+        targetAircraft.setAirportId(airportId);
+
+        return targetAircraft;
+    }
 }
