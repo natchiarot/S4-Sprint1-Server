@@ -2,6 +2,7 @@ package com.s4sprint1.server.services;
 
 import com.s4sprint1.server.entities.*;
 
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -61,59 +62,43 @@ public class RestController {
     // For example, to associate airport 1 with city 10: /city/10?airport=1
     @PutMapping("city/{cityId}")
     public City moveAirportToCity(@PathVariable int cityId, @RequestParam(value = "airport") int airportId) {
-        Airport targetAirport = airportService.getAirport(airportId);
-
-        // An airport can only exist in one city, ensure this rule is enforced
-        // (Airports shouldn't move in the first place, but...)
-        for (City city : cityService.getAllCities()) {
-            if (city.getId() == cityId)
-                city.linkAirport(targetAirport);
-            else
-                city.unlinkAirport(targetAirport);
-        }
-
-        City targetCity = cityService.getCity(cityId);
-        targetCity.linkAirport(targetAirport);
-
-        return targetCity;
+        return cityService.moveAirportToCity(airportService.getAirport(airportId), cityId);
     }
 
     // Remove an airport association
     @DeleteMapping("city/{cityId}")
     public City removeAirportFromCity(@PathVariable int cityId, @RequestParam(value = "airport") int airportId) {
-        City targetCity = cityService.getCity(cityId);
-        targetCity.unlinkAirport(airportService.getAirport(airportId));
-
-        return targetCity;
+        return cityService.removeAirportFromCity(airportService.getAirport(airportId), cityId);
     }
 
     // Add an aircraft
     @PostMapping("aircraft")
-    public Aircraft addAircraft(Aircraft newAircraft) {
-        aircraftService.addAircraft(newAircraft);
-
-        return newAircraft;
+    public Aircraft addAircraft(@RequestBody Aircraft newAircraft) {
+        return aircraftService.addAircraft(newAircraft);
     }
 
     // Add a list of aircraft
-    @PostMapping("aircraft")
-    public List<Aircraft> addAircraftList(List<Aircraft> newAircraft) {
-            return aircraftService.addAircraftList(newAircraft);
+    @PostMapping("aircraftList")
+    public List<Aircraft> addAircraftList(@RequestBody List<Aircraft> newAircraft) {
+        return aircraftService.addAircraftList(newAircraft);
+    }
+
+    // Get an aircraft
+    @GetMapping("aircraft/{id}")
+    public Aircraft getAircraft(@PathVariable int id) {
+        return aircraftService.getAircraft(id);
     }
 
     // Get a list of aircraft
     @GetMapping("aircraft")
-    public List<Aircraft> getAircraft() {
+    public List<Aircraft> getAllAircraft() {
         return aircraftService.getAllAircraft();
     }
 
     // Move aircraft to a given airport
     @PutMapping("aircraft/{aircraftId}")
     public Aircraft moveAircraftToAirport(@PathVariable int aircraftId, @RequestParam(value = "airport") int airportId) {
-        Aircraft targetAircraft = aircraftService.getAircraft(aircraftId);
-        targetAircraft.setAirportId(airportId);
-
-        return targetAircraft;
+        return aircraftService.moveAircraftToAirport(aircraftId, airportId);
     }
 
     // Get the current location (airport) of an aircraft
@@ -129,7 +114,8 @@ public class RestController {
     @GetMapping("aircraft/{aircraftId}/destinations")
     public List<Airport> getAircraftDestinations(@PathVariable int aircraftId) {
         List<Airport> destinations = airportService.getAllAirports();
-        destinations.remove(airportService.getAirport(aircraftId));
+        int excludedId = aircraftService.getAircraft(aircraftId).getAirportId();
+        destinations.remove(airportService.getAirport(excludedId));
 
         return destinations;
     }
@@ -137,17 +123,13 @@ public class RestController {
     // Add a passenger
     @PostMapping("passenger")
     public Passenger addPassenger(@RequestBody Passenger newPassenger) {
-        passengerService.addPassenger(newPassenger);
-
-        return newPassenger;
+        return passengerService.addPassenger(newPassenger);
     }
 
     // Add a list of passengers
     @PostMapping("passengers")
     public List<Passenger> addPassengers(@RequestBody List<Passenger> newPassengers) {
-        passengerService.addPassengers(newPassengers);
-
-        return newPassengers;
+        return passengerService.addPassengers(newPassengers);
     }
 
     // Get a specific passenger
@@ -180,33 +162,19 @@ public class RestController {
         return flightService.getFlight(id);
     }
 
-    // Get all flights
+    // Filter all flights by a parameter
     @GetMapping("flights")
-    public List<Flight> getFlights() {
-        return flightService.getAllFlights();
-    }
+    public List<Flight> getFlights(@RequestParam(value = "find", required = false) String filter, @RequestParam(value = "id", required = false) Integer id) {
+        // If no id is supplied, return the full list of flights
+        if (id == null)
+            return flightService.getAllFlights();
 
-    // Get all flights from a given airport
-    @GetMapping("flights")
-    public List<Flight> getFlightsBySource(@RequestParam(value = "source") int source) {
-        return flightService.getFlightsFromAirport(source);
-    }
-
-    // Get all flights to a given airport
-    @GetMapping("flights")
-    public List<Flight> getFlightsByDestination(@RequestParam(value = "destination") int destination) {
-        return flightService.getFlightsToAirport(destination);
-    }
-
-    // Get all flights a given passenger has taken
-    @GetMapping("flights")
-    public List<Flight> getFlightsByPassenger(@RequestParam(value = "passenger") int passenger) {
-        return flightService.getFlightsByPassenger(passenger);
-    }
-
-    // Get all flights by a given aircraft
-    @GetMapping("flights")
-    public List<Flight> getFlightsByAircraft(@RequestParam(value = "aircraft") int aircraft) {
-        return flightService.getFlightsByAircraft(aircraft);
+        return switch (filter) {
+            case "source" -> flightService.getFlightsFromAirport(id);
+            case "destination" -> flightService.getFlightsToAirport(id);
+            case "passenger" -> flightService.getFlightsByPassenger(id);
+            case "aircraft" -> flightService.getFlightsByAircraft(id);
+            default -> flightService.getAllFlights();
+        };
     }
 }
