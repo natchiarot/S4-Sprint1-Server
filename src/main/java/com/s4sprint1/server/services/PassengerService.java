@@ -17,6 +17,13 @@ public class PassengerService {
         return newPassenger;
     }
 
+    public List<Passenger> addPassengers(List<Passenger> newPassengers) {
+        for (Passenger passenger : newPassengers)
+            passengers.put(passenger.getId(), passenger);
+
+        return newPassengers;
+    }
+
     public Passenger getPassenger(int id) {
         return passengers.get(id);
     }
