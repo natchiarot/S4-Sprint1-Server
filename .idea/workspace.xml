@@ -6,16 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c3de1577-d1fd-4058-8499-3557a6073694" name="Changes" comment="Additional endpoints for relationships between airports and aircraft">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/AircraftService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/AircraftService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/CityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/CityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/RestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/RestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/entities/Flight.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/entities/Flight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/AircraftService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/AircraftService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/CityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/CityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/FlightService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/FlightService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/PassengerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/PassengerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/RestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/RestController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +51,7 @@
     "Application.ServerApplication.executor": "Run",
     "Maven.server [compile].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "api-refactor",
+    "git-widget-placeholder": "data-functions-2",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
@@ -85,6 +75,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ServerApplication" />
+        <item itemvalue="Application.ServerApplication" />
         <item itemvalue="Application.ServerApplication" />
         <item itemvalue="Application.ServerApplication" />
         <item itemvalue="Application.ServerApplication" />
