@@ -33,6 +33,12 @@ public class APIController {
         return cityService.addCities(cities);
     }
 
+    // Get a specific city
+    @GetMapping("city/{cityId}")
+    public City getCity(@PathVariable int cityId) {
+        return cityService.getCity(cityId);
+    }
+
     // Get a list of all cities
     @GetMapping("cities")
     public List<City> getAllCities() {
@@ -60,6 +66,12 @@ public class APIController {
     @PostMapping("airport")
     public Airport addAirport(@RequestBody Airport newAirport) {
         return airportService.addAirport(newAirport);
+    }
+
+    // Get an airport
+    @GetMapping("airport/{airportId}")
+    public Airport getAirport(@PathVariable int airportId) {
+        return airportService.getAirport();
     }
 
     // Add a list of airports
