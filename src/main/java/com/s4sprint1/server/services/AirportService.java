@@ -31,4 +31,18 @@ public class AirportService {
     public List<Airport> getAllAirports() {
         return List.copyOf(airports.values());
     }
+
+    public Airport updateAirport(int id, Airport airport) {
+        Airport updatedAirport = airports.get(id);
+
+        updatedAirport.setCode(airport.getCode());
+        updatedAirport.setName(airport.getName());
+
+        airports.put(id, updatedAirport);
+        return updatedAirport;
+    }
+
+    public void deleteAirport(int id) {
+        airports.remove(id);
+    }
 }

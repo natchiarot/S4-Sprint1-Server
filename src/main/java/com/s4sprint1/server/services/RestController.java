@@ -40,6 +40,23 @@ public class RestController {
         return cityService.getAllCities();
     }
 
+    // Update a city
+    @PutMapping("city/{id}")
+    public City updateCity(@PathVariable int id, @RequestBody City city) {
+        return cityService.updateCity(id, city);
+    }
+
+    // Delete a city
+    @DeleteMapping("city/{id}")
+    public void deleteCity(@PathVariable int id) {
+        // If a city is deleted, all airports in that city must also be deleted.
+        City toDelete = cityService.getCity(id);
+        for (Airport airport : toDelete.getAirports())
+            airportService.deleteAirport(airport.getId());
+
+        cityService.deleteCity(id);
+    }
+
     // Add a new airport
     @PostMapping("airport")
     public Airport addAirport(@RequestBody Airport newAirport) {
@@ -60,15 +77,21 @@ public class RestController {
 
     // Associate an airport with a city
     // For example, to associate airport 1 with city 10: /city/10?airport=1
-    @PutMapping("city/{cityId}")
-    public City moveAirportToCity(@PathVariable int cityId, @RequestParam(value = "airport") int airportId) {
+    @PutMapping("city/{cityId}/airport/{airportId}")
+    public City moveAirportToCity(@PathVariable int cityId, @PathVariable int airportId) {
         return cityService.moveAirportToCity(airportService.getAirport(airportId), cityId);
     }
 
     // Remove an airport association
-    @DeleteMapping("city/{cityId}")
-    public City removeAirportFromCity(@PathVariable int cityId, @RequestParam(value = "airport") int airportId) {
+    @DeleteMapping("city/{cityId}/airport/{airportId}")
+    public City removeAirportFromCity(@PathVariable int cityId, @PathVariable int airportId) {
         return cityService.removeAirportFromCity(airportService.getAirport(airportId), cityId);
+    }
+
+    // Update an airport
+    @PutMapping("airport/{id}")
+    public Airport updateAirport(@PathVariable int id, @RequestBody Airport airport) {
+        return airportService.updateAirport(id, airport);
     }
 
     // Add an aircraft

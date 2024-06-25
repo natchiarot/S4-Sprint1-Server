@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3de1577-d1fd-4058-8499-3557a6073694" name="Changes" comment="Additional endpoints for relationships between airports and aircraft">
+    <list default="true" id="c3de1577-d1fd-4058-8499-3557a6073694" name="Changes" comment="Removed unnecessary json files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataFunction.js" beforeDir="false" afterPath="$PROJECT_DIR$/DataFunction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/AirportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/AirportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/CityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/CityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/RestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/RestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/AirportService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/AirportService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/CityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/CityService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/RestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/RestController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +58,7 @@
     "Application.ServerApplication.executor": "Run",
     "Maven.server [compile].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "data-functions-2",
+    "git-widget-placeholder": "api-additions",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
@@ -169,6 +176,7 @@
     <MESSAGE value="Airports can be associated with cities, convenience endpoints" />
     <MESSAGE value="Added methods for FlightService, including searching" />
     <MESSAGE value="Additional endpoints for relationships between airports and aircraft" />
-    <option name="LAST_COMMIT_MESSAGE" value="Additional endpoints for relationships between airports and aircraft" />
+    <MESSAGE value="Removed unnecessary json files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed unnecessary json files" />
   </component>
 </project>
