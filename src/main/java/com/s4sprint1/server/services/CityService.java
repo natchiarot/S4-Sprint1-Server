@@ -52,4 +52,19 @@ public class CityService {
 
         return targetCity;
     }
+
+    public City updateCity(int index, City putCity) {
+        City updatedCity = cities.get(index);
+
+        updatedCity.setName(putCity.getName());
+        updatedCity.setPopulation(putCity.getPopulation());
+        updatedCity.setState(putCity.getState()); // You never know!
+
+        cities.put(index, updatedCity);
+        return updatedCity;
+    }
+
+    public void deleteCity(int index) {
+        cities.remove(index);
+    }
 }
