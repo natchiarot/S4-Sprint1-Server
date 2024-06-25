@@ -71,7 +71,7 @@ public class APIController {
     // Get an airport
     @GetMapping("airport/{airportId}")
     public Airport getAirport(@PathVariable int airportId) {
-        return airportService.getAirport();
+        return airportService.getAirport(airportId);
     }
 
     // Add a list of airports
