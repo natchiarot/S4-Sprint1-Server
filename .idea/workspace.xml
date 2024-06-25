@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3de1577-d1fd-4058-8499-3557a6073694" name="Changes" comment="DELETE and PUT methods for /city and /airport; airport association path change">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/AircraftService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/AircraftService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/AirportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/AirportService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/PassengerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/PassengerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/RestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/APIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/AircraftService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/AircraftService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/AirportService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/AirportService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/PassengerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/PassengerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/RestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/RestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,20 +45,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.ServerApplication.executor": "Run",
-    "Maven.server [compile].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "api-additions",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.ServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.server [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;api-additions&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="ServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.s4sprint1.server.ServerApplication" />
