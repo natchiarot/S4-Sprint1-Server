@@ -398,7 +398,7 @@ async function asyncCity() {
 async function asyncAirportToCity(cityId, airportId) {
   try {
     const response = await fetch(
-      `http://localhost:8080/city/${cityId}?airport=${airportId}`,
+      `http://localhost:8080/city/${cityId}/airport/${airportId}`,
       {
         method: "PUT",
         headers: {

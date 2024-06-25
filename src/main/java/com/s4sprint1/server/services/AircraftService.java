@@ -38,4 +38,20 @@ public class AircraftService {
 
         return targetAircraft;
     }
+
+    public Aircraft updateAircraft(int id, Aircraft putAircraft) {
+        Aircraft updatedAircraft = aircraftMap.get(id);
+
+        updatedAircraft.setAirportId(putAircraft.getAirportId());
+        updatedAircraft.setType(putAircraft.getType());
+        updatedAircraft.setAirlineName(putAircraft.getAirlineName());
+        updatedAircraft.setMaxCapacity(putAircraft.getMaxCapacity());
+
+        aircraftMap.put(id, updatedAircraft);
+        return updatedAircraft;
+    }
+
+    public void deleteAircraft(int id) {
+        aircraftMap.remove(id);
+    }
 }
