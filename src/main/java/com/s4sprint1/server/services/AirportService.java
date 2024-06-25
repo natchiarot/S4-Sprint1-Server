@@ -32,11 +32,11 @@ public class AirportService {
         return List.copyOf(airports.values());
     }
 
-    public Airport updateAirport(int id, Airport airport) {
+    public Airport updateAirport(int id, Airport putAirport) {
         Airport updatedAirport = airports.get(id);
 
-        updatedAirport.setCode(airport.getCode());
-        updatedAirport.setName(airport.getName());
+        updatedAirport.setCode(putAirport.getCode());
+        updatedAirport.setName(putAirport.getName());
 
         airports.put(id, updatedAirport);
         return updatedAirport;

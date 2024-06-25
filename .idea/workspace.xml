@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3de1577-d1fd-4058-8499-3557a6073694" name="Changes" comment="Removed unnecessary json files">
+    <list default="true" id="c3de1577-d1fd-4058-8499-3557a6073694" name="Changes" comment="DELETE and PUT methods for /city and /airport; airport association path change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataFunction.js" beforeDir="false" afterPath="$PROJECT_DIR$/DataFunction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/AircraftService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/AircraftService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/AirportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/AirportService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/CityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/CityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/RestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/RestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/PassengerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/PassengerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/RestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/s4sprint1/server/services/APIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/AircraftService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/AircraftService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/AirportService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/AirportService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/CityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/CityService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/PassengerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/PassengerService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/RestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/s4sprint1/server/services/RestController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718920050781</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="DELETE and PUT methods for /city and /airport; airport association path change">
+      <option name="closed" value="true" />
+      <created>1719290269506</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719290269506</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -177,6 +186,7 @@
     <MESSAGE value="Added methods for FlightService, including searching" />
     <MESSAGE value="Additional endpoints for relationships between airports and aircraft" />
     <MESSAGE value="Removed unnecessary json files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed unnecessary json files" />
+    <MESSAGE value="DELETE and PUT methods for /city and /airport; airport association path change" />
+    <option name="LAST_COMMIT_MESSAGE" value="DELETE and PUT methods for /city and /airport; airport association path change" />
   </component>
 </project>

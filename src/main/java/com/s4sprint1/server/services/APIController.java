@@ -2,15 +2,14 @@ package com.s4sprint1.server.services;
 
 import com.s4sprint1.server.entities.*;
 
-import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@org.springframework.web.bind.annotation.RestController
+@RestController
 @CrossOrigin
-public class RestController {
+public class APIController {
     @Autowired
     private CityService cityService;
     @Autowired
@@ -118,18 +117,24 @@ public class RestController {
         return aircraftService.getAllAircraft();
     }
 
-    // Move aircraft to a given airport
-    @PutMapping("aircraft/{aircraftId}")
-    public Aircraft moveAircraftToAirport(@PathVariable int aircraftId, @RequestParam(value = "airport") int airportId) {
-        return aircraftService.moveAircraftToAirport(aircraftId, airportId);
-    }
-
     // Get the current location (airport) of an aircraft
     @GetMapping("aircraft/{aircraftId}/location")
     public Airport getAircraftLocation(@PathVariable int aircraftId) {
         Aircraft aircraft = aircraftService.getAircraft(aircraftId);
 
         return airportService.getAirport(aircraft.getAirportId());
+    }
+
+    // Update an aircraft
+    @PutMapping("aircraft/{aircraftId}")
+    public Aircraft updateAircraft(@PathVariable int aircraftId, @RequestBody Aircraft aircraft) {
+        return aircraftService.updateAircraft(aircraftId, aircraft);
+    }
+
+    // Delete an aircraft
+    @DeleteMapping("aircraft/{aircraftId}")
+    public void deleteAircraft(@PathVariable int aircraftId) {
+        aircraftService.deleteAircraft(aircraftId);
     }
 
     // Get all possible flight destinations for an aircraft
@@ -165,6 +170,18 @@ public class RestController {
     @GetMapping("passengers")
     public List<Passenger> getPassengers() {
         return passengerService.getAllPassengers();
+    }
+
+    // Update a passenger
+    @PutMapping("passenger/{passengerId}")
+    public Passenger updatePassenger(@PathVariable int passengerId, @RequestBody Passenger passenger) {
+        return passengerService.updatePassenger(passengerId, passenger);
+    }
+
+    // Delete a passenger
+    @DeleteMapping("passenger/{passengerId}")
+    public void deletePassenger(@PathVariable int passengerId) {
+        passengerService.deletePassenger(passengerId);
     }
 
     // Add a flight
