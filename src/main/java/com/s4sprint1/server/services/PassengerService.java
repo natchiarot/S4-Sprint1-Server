@@ -31,4 +31,20 @@ public class PassengerService {
     public List<Passenger> getAllPassengers() {
         return List.copyOf(passengers.values());
     }
+
+    public Passenger updatePassenger(int id, Passenger putPassenger) {
+        Passenger updatedPassenger = passengers.get(id);
+
+        updatedPassenger.setFirstName(putPassenger.getFirstName());
+        updatedPassenger.setLastName(putPassenger.getLastName());
+        updatedPassenger.setHomeCityId(putPassenger.getHomeCityId());
+        updatedPassenger.setPhoneNumber(putPassenger.getPhoneNumber());
+
+        passengers.put(id, updatedPassenger);
+        return updatedPassenger;
+    }
+
+    public void deletePassenger(int id) {
+        passengers.remove(id);
+    }
 }
