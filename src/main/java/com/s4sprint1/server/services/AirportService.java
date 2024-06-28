@@ -3,9 +3,7 @@ package com.s4sprint1.server.services;
 import org.springframework.stereotype.Service;
 import com.s4sprint1.server.entities.Airport;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service // Service to store and recall Airports
 public class AirportService {
@@ -30,6 +28,17 @@ public class AirportService {
 
     public List<Airport> getAllAirports() {
         return List.copyOf(airports.values());
+    }
+
+    public List<Airport> getAllAirportsExcept(int excludeId) {
+        List<Airport> result = new ArrayList<>();
+
+        for (Airport airport : getAllAirports()) {
+            if (airport.getId() != excludeId)
+                result.add(airport);
+        }
+
+        return result;
     }
 
     public Airport updateAirport(int id, Airport putAirport) {
