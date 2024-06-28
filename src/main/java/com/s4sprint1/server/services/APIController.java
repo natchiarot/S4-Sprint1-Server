@@ -153,9 +153,8 @@ public class APIController {
     // (ie, all airports except the one it is currently located at)
     @GetMapping("aircraft/{aircraftId}/destinations")
     public List<Airport> getAircraftDestinations(@PathVariable int aircraftId) {
-        List<Airport> destinations = airportService.getAllAirports();
         int excludedId = aircraftService.getAircraft(aircraftId).getAirportId();
-        destinations.remove(airportService.getAirport(excludedId));
+        List<Airport> destinations = airportService.getAllAirportsExcept(excludedId);
 
         return destinations;
     }
